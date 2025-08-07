@@ -7,19 +7,20 @@ import CategoryList from "@/ui/CategoryList";
 
 export default async function SearchPage({ searchParams }) {
   const { search } = await searchParams;
-  const queries = search ? `?search=${search}&sort=asc` : ""
+  const queries = search ? `?search=${search}&sort=asc` : "";
   const {
     data: { posts },
   } = await useProducts(queries);
 
   return (
     <div className="flex flex-col gap-y-6">
-      <Search />
+      <Suspense fallback={<Loading />}>
+        <Search />
+      </Suspense>
       <CategoryList />
       <Suspense fallback={<Loading />}>
         <ProductList posts={posts} />
       </Suspense>
-
     </div>
   );
 }

@@ -1,9 +1,11 @@
-"use client"
+"use client";
 
 import Button from "ui/button";
 import Search from "./Search";
 import LinkPage from "ui/link";
 import { useAuth } from "@/context/AuthContext";
+import { Suspense } from "react";
+import Loading from "@/ui/Loading";
 
 export default function MainHeader() {
   const { isAuthenticated } = useAuth();
@@ -26,7 +28,9 @@ export default function MainHeader() {
         </div>
         {/*  بخش وسط (سرچ) */}
         <div className="col-span-11">
-          <Search />
+          <Suspense fallback={<Loading />}>
+            <Search />
+          </Suspense>
         </div>
       </div>
     </header>

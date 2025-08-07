@@ -3,8 +3,6 @@
 import { usePathname, useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 
-// import { XMarkIcon } from "@heroicons/react/24/outline";
-
 export default function Search() {
   const searchParams = useSearchParams()
   const router = useRouter()

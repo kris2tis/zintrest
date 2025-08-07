@@ -1,4 +1,3 @@
-
 export const metadata = {
   title: "پست ها",
   description: "مدریت پست های سایت",
