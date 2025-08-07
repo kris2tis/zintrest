@@ -8,9 +8,8 @@ const nextConfig = {
     images: {
         remotePatterns: [
             {
-                protocol: "http",
-                hostname: "localhost",
-                port:"5000",
+                protocol: "https",
+                hostname: "zintrest-api.liara.run",
                 pathname:"/uploads/**"
             }
         ],

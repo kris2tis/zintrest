@@ -17,7 +17,8 @@ export default async function Home({ searchParams }) {
   const {
     data: { posts },
   } = await useProducts(queryParams);
-  
+  console.log("BASE_URL:", process.env.NEXT_PUBLIC_BASE_URL)
+
   return (
     <Suspense fallback={<NotFound />}>
       <CategoryList />

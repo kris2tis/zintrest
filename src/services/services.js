@@ -36,7 +36,9 @@ export async function useProduct(slug, option) {
 }
 
 export async function getAllPosts(queries) {
-  return http.get(`/post/list${queries ? `?${queries}` : ""}`).then(({ data: { data } }) => data.posts);
+  return http
+    .get(`/post/list${queries ? `?${queries}` : ""}`)
+    .then(({ data: { data } }) => data.posts);
 }
 
 export async function useCategoryies() {
