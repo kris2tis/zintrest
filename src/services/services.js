@@ -21,7 +21,7 @@ export async function useProducts(queries) {
 export async function useProduct(slug, option) {
   try {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URl}/post/${slug}`,
+      `${process.env.NEXT_PUBLIC_BASE_URL}/post/${slug}`,
       option
     );
     if (!response.ok) throw new Error("faild to fetch data !");
